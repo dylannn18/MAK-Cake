@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Now | MAK CAKES</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body class="">
+<header class="site-header">
+  <div class="topbar">
+    <div class="logo-container">
+      <img src="https://images.pexels.com/photos/7421263/pexels-photo-7421263.jpeg?cs=srgb&dl=pexels-marta-dzedyshko-1042863-7421263.jpg&fm=jpg" alt="MAK CAKES logo" class="logo-image">
+      <h1>MAK CAKES</h1>
+    </div>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="home.html" class="">Home</a></li>
+        <li><a href="about-us.html" class="">About</a></li>
+        <li><a href="menu.html" class="">Menu</a></li>
+        <li><a href="gallery.html" class="">Gallery</a></li>
+        <li><a href="testimonials.html" class="">Testimonials</a></li>
+        <li><a href="order-now.html" class="active">Order</a></li>
+        <li><a href="contact-us.html" class="">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <section class="light-wrap order-section">
+    <div class="section-head"><h2>Place Your Order</h2><p>Share your event details and preferred cake style.</p></div>
+    
+    <form method="POST">
+      <input type="hidden" name="csrfmiddlewaretoken" value="y8EwD9serHbA9zSlP9JvKpMHa5iECoUbXtuEW3yVOohIGoyi8aPEgXF9NgracZ9x">
+      <div><label for="id_full_name">Full Name</label><input type="text" name="full_name" maxlength="120" required id="id_full_name"></div>
+      <div><label for="id_email">Email</label><input type="email" name="email" maxlength="320" id="id_email"></div>
+      <div><label for="id_phone">Phone Number</label><input type="text" name="phone" maxlength="20" required id="id_phone"></div>
+      <div><label for="id_cake">Cake Type</label><select name="cake" required id="id_cake">
+  <option value="" selected>Select a cake</option>
+
+  <option value="11">Bento Cakes</option>
+
+  <option value="3">Black Mixed Fruit Cake</option>
+
+  <option value="8">Blueberry Cake</option>
+
+  <option value="6">Butterscotch Cake</option>
+
+  <option value="1">Chocolate Cake</option>
+
+  <option value="5">Fondant Cake</option>
+
+  <option value="4">Gluten-Free Almond Cake</option>
+
+  <option value="13">Hazelnut Praline Cake</option>
+
+  <option value="9">Mango Cake</option>
+
+  <option value="12">Photo Cake</option>
+
+  <option value="10">Pinata Cake</option>
+
+  <option value="14">Rasmalai Cake</option>
+
+  <option value="2">Red Velvet Cake</option>
+
+  <option value="7">Vanilla Cake</option>
+
+</select></div>
+      <div><label for="id_quantity">Quantity</label><input type="number" name="quantity" value="1" min="1" required id="id_quantity"></div>
+      <div><label for="id_delivery_date">Delivery Date</label><input type="date" name="delivery_date" id="id_delivery_date"></div>
+      <div><label for="id_message">Special Requests</label><textarea name="message" cols="40" rows="4" id="id_message">
+</textarea></div>
+      <button class="btn btn-primary" type="submit">Submit Order</button>
+    </form>
+  </section>
+</main>
+
+</body>
+</html>
+
+

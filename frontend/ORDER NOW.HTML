@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Now - Sweet Delights</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8e8c8;
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 15px;
+            text-align: center;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            color: #8b4513;
+            font-size: 24px;
+        }
+        form {
+            background: #fff7e6;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+        label {
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #d4a373;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #8b4513;
+            color: white;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background-color: #a0522d;
+        }
+        .form-section {
+            margin-bottom: 10px;
+        }
+    </style>
+    <script>
+        function validateForm(event) {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            if (!name || !email || !phone) {
+                alert('Please fill in all required fields.');
+                event.preventDefault();
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const cakeType = document.getElementById('cake-type');
+            const customMessage = document.getElementById('custom-message');
+            
+            cakeType.addEventListener("change", function () {
+                if (cakeType.value === "custom") {
+                    customMessage.style.display = "block";
+                } else {
+                    customMessage.style.display = "none";
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Order Your Cake Now!</h1>
+        <form action="submit_order.php" method="POST" onsubmit="validateForm(event)">
+            <div class="form-section">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-section">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-section">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            
+            <div class="form-section">
+                <label for="cake-type">Select Cake Type:</label>
+                <select id="cake-type" name="cake-type">
+                    <option value="chocolate">Chocolate</option>
+                    <option value="vanilla">Vanilla</option>
+                    <option value="red velvet">Red Velvet</option>
+                    <option value="custom">Custom</option>
+                </select>
+            </div>
+            
+            <div class="form-section" id="custom-message" style="display: none;">
+                <label for="custom-details">Describe Your Custom Cake:</label>
+                <textarea id="custom-details" name="custom-details" rows="3"></textarea>
+            </div>
+            
+            <div class="form-section">
+                <label for="message">Special Requests (Optional):</label>
+                <textarea id="message" name="message" rows="3"></textarea>
+            </div>
+            
+            <button type="submit" class="btn">Place Order</button>
+        </form>
+    </div>
+</body>
+</html>

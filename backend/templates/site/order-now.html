@@ -1,0 +1,25 @@
+{% extends "site/base.html" %}
+{% block title %}Order Now | MAK CAKES{% endblock %}
+{% block content %}
+<main class="page">
+  <section class="light-wrap order-section">
+    <div class="section-head"><h2>Place Your Order</h2><p>Share your event details and preferred cake style.</p></div>
+    {% if messages %}
+      {% for message in messages %}
+      <div class="flash-message">{{ message }}</div>
+      {% endfor %}
+    {% endif %}
+    <form method="POST">
+      {% csrf_token %}
+      <div><label for="id_full_name">Full Name</label>{{ form.full_name }}</div>
+      <div><label for="id_email">Email</label>{{ form.email }}</div>
+      <div><label for="id_phone">Phone Number</label>{{ form.phone }}</div>
+      <div><label for="id_cake">Cake Type</label>{{ form.cake }}</div>
+      <div><label for="id_quantity">Quantity</label>{{ form.quantity }}</div>
+      <div><label for="id_delivery_date">Delivery Date</label>{{ form.delivery_date }}</div>
+      <div><label for="id_message">Special Requests</label>{{ form.message }}</div>
+      <button class="btn btn-primary" type="submit">Submit Order</button>
+    </form>
+  </section>
+</main>
+{% endblock %}

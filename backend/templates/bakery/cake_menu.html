@@ -1,0 +1,36 @@
+{% extends "bakery/base.html" %}
+{% block title %}Cake Menu | MAK Cakes{% endblock %}
+{% block content %}
+<div class="toolbar">
+  <h1>Cake Menu</h1>
+  <a class="btn btn-gold" href="{% url 'bakery:cake_create' %}">Add New Cake</a>
+</div>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Flavor</th>
+      <th>Price</th>
+      <th>Stock</th>
+      <th>Reorder</th>
+      <th>Status</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for cake in cakes %}
+    <tr>
+      <td>{{ cake.name }}</td>
+      <td>{{ cake.flavor|default:"-" }}</td>
+      <td>Rs. {{ cake.unit_price }}</td>
+      <td>{% if cake.inventory %}{{ cake.inventory.quantity_available }}{% else %}0{% endif %}</td>
+      <td>{% if cake.inventory %}{{ cake.inventory.reorder_level }}{% else %}-{% endif %}</td>
+      <td><span class="badge">{% if cake.is_active %}Active{% else %}Inactive{% endif %}</span></td>
+      <td><a class="btn btn-ghost" href="{% url 'bakery:cake_edit' cake.id %}">Edit</a></td>
+    </tr>
+    {% empty %}
+    <tr><td colspan="7">No cakes available yet.</td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

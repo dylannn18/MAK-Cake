@@ -1,0 +1,17 @@
+{% extends "site/base.html" %}
+{% block title %}Gallery | MAK CAKES{% endblock %}
+{% block content %}
+<main class="page">
+  <section class="inner-hero" style="background-image:url('https://images.pexels.com/photos/7541726/pexels-photo-7541726.jpeg?cs=srgb&dl=pexels-catscoming-7541726.jpg&fm=jpg');"><div class="inner-hero-content"><p class="kicker">Visual Stories</p><h2>Cake Gallery</h2><p>Recent custom cakes and event orders from our bakery studio.</p></div></section>
+  <section class="light-wrap"><div class="grid grid-4">
+      {% for cake in gallery_items %}
+      <article class="tile">
+        <img src="{{ cake.image_url }}" alt="{{ cake.name }}">
+        <div class="tile-body"><h3>{{ cake.name }}</h3></div>
+      </article>
+      {% empty %}
+      <article class="tile"><img src="https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Cake gallery"></article>
+      {% endfor %}
+    </div></section>
+</main>
+{% endblock %}

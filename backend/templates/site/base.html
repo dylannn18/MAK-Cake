@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}MAK CAKES{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'styles.css' %}">
+  <script src="{% static 'site.js' %}" defer></script>
+</head>
+<body class="{% block body_class %}{% endblock %}">
+<header class="site-header">
+  <div class="topbar">
+    <div class="logo-container">
+      <img src="https://images.pexels.com/photos/7421263/pexels-photo-7421263.jpeg?cs=srgb&dl=pexels-marta-dzedyshko-1042863-7421263.jpg&fm=jpg" alt="MAK CAKES logo" class="logo-image">
+      <h1>MAK CAKES</h1>
+    </div>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+    <nav aria-label="Primary">
+      <ul id="primary-nav">
+        <li><a href="{% url 'bakery:home' %}" class="{% if request.path == '/' %}active{% endif %}">Home</a></li>
+        <li><a href="{% url 'bakery:about_us' %}" class="{% if request.path == '/about-us/' %}active{% endif %}">About</a></li>
+        <li><a href="{% url 'bakery:menu' %}" class="{% if request.path == '/menu/' %}active{% endif %}">Menu</a></li>
+        <li><a href="{% url 'bakery:gallery' %}" class="{% if request.path == '/gallery/' %}active{% endif %}">Gallery</a></li>
+        <li><a href="{% url 'bakery:testimonials' %}" class="{% if request.path == '/testimonials/' %}active{% endif %}">Testimonials</a></li>
+        <li><a href="{% url 'bakery:order_now' %}" class="{% if request.path == '/order-now/' %}active{% endif %}">Order</a></li>
+        <li><a href="{% url 'bakery:contact_us' %}" class="{% if request.path == '/contact-us/' %}active{% endif %}">Contact</a></li>
+        {% if request.user.is_authenticated and request.user.is_staff %}
+        <li><a href="{% url 'bakery:dashboard' %}">Dashboard</a></li>
+        <li>
+          <form method="post" action="{% url 'logout' %}" style="display:inline;">
+            {% csrf_token %}
+            <button
+              type="submit"
+              style="background:none;border:none;padding:0;cursor:pointer;color:inherit;font:inherit;text-transform:capitalize;letter-spacing:0.02em;"
+            >
+              Logout
+            </button>
+          </form>
+        </li>
+        {% else %}
+        <li><a href="{% url 'login' %}">Staff Login</a></li>
+        {% endif %}
+      </ul>
+    </nav>
+  </div>
+</header>
+{% block content %}{% endblock %}
+</body>
+</html>

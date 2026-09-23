@@ -1,0 +1,49 @@
+{% extends "bakery/base.html" %}
+{% block title %}{{ title }} | MAK Cakes{% endblock %}
+{% block content %}
+<div class="toolbar">
+  <h1>{{ title }}</h1>
+  <a class="btn btn-ghost" href="{% url 'bakery:cake_menu' %}">Back to Menu</a>
+</div>
+
+<form method="post">
+  {% csrf_token %}
+  <div class="form-grid">
+    <div class="field">
+      <label for="{{ cake_form.name.id_for_label }}">Cake Name</label>
+      {{ cake_form.name }}
+    </div>
+    <div class="field">
+      <label for="{{ cake_form.flavor.id_for_label }}">Flavor</label>
+      {{ cake_form.flavor }}
+    </div>
+    <div class="field">
+      <label for="{{ cake_form.unit_price.id_for_label }}">Unit Price</label>
+      {{ cake_form.unit_price }}
+    </div>
+    <div class="field">
+      <label for="{{ inventory_form.quantity_available.id_for_label }}">Quantity Available</label>
+      {{ inventory_form.quantity_available }}
+    </div>
+    <div class="field">
+      <label for="{{ inventory_form.reorder_level.id_for_label }}">Reorder Level</label>
+      {{ inventory_form.reorder_level }}
+    </div>
+    <div class="field">
+      <label for="{{ cake_form.image_url.id_for_label }}">Image URL</label>
+      {{ cake_form.image_url }}
+    </div>
+    <div class="field full">
+      <label for="{{ cake_form.description.id_for_label }}">Description</label>
+      {{ cake_form.description }}
+    </div>
+    <div class="field full">
+      <label for="{{ cake_form.is_active.id_for_label }}">Status</label>
+      {{ cake_form.is_active }} <span class="muted">Check to show this cake on public menu.</span>
+    </div>
+  </div>
+  <div style="margin-top:14px;">
+    <button class="btn btn-gold" type="submit">Save Cake</button>
+  </div>
+</form>
+{% endblock %}

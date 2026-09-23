@@ -1,0 +1,69 @@
+{% extends "bakery/base.html" %}
+{% block title %}Dashboard | MAK Cakes{% endblock %}
+{% block content %}
+<h1>Dashboard</h1>
+<div class="cards">
+  <div class="card"><strong>Total Cakes</strong><div>{{ total_cakes }}</div></div>
+  <div class="card"><strong>Active Cakes</strong><div>{{ active_cakes }}</div></div>
+  <div class="card"><strong>Customers</strong><div>{{ total_customers }}</div></div>
+  <div class="card"><strong>Total Orders</strong><div>{{ total_orders }}</div></div>
+  <div class="card"><strong>Pending Orders</strong><div>{{ pending_orders }}</div></div>
+  <div class="card"><strong>Total Revenue</strong><div>Rs. {{ total_revenue }}</div></div>
+</div>
+
+<div class="toolbar">
+  <h2 style="margin:0;">Recent Orders</h2>
+  <div>
+    <a class="btn btn-ghost" href="{% url 'bakery:order_list' %}">Manage Orders</a>
+    <a class="btn btn-gold" href="{% url 'bakery:cake_create' %}">Add Cake</a>
+  </div>
+</div>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Customer</th>
+      <th>Status</th>
+      <th>Order Date</th>
+      <th>Total</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for order in recent_orders %}
+    <tr>
+      <td>#{{ order.id }}</td>
+      <td>{{ order.customer.full_name }}</td>
+      <td><span class="badge">{{ order.get_status_display }}</span></td>
+      <td>{{ order.order_date }}</td>
+      <td>{{ order.total_amount }}</td>
+      <td><a class="btn btn-ghost" href="{% url 'bakery:bill_detail' order.id %}">Bill</a></td>
+    </tr>
+    {% empty %}
+    <tr><td colspan="6">No orders yet.</td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<h2>Low Stock Alert</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Cake</th>
+      <th>Available</th>
+      <th>Reorder Level</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for stock in low_stock %}
+    <tr>
+      <td>{{ stock.cake.name }}</td>
+      <td>{{ stock.quantity_available }}</td>
+      <td>{{ stock.reorder_level }}</td>
+    </tr>
+    {% empty %}
+    <tr><td colspan="3">All cakes are above reorder level.</td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

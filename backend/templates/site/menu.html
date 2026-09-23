@@ -1,0 +1,28 @@
+{% extends "site/base.html" %}
+{% block title %}Menu | MAK CAKES{% endblock %}
+{% block content %}
+<main class="page">
+  <section class="inner-hero" style="background-image:url('https://images.pexels.com/photos/24778018/pexels-photo-24778018.jpeg?cs=srgb&dl=pexels-pincalo-24778018.jpg&fm=jpg');"><div class="inner-hero-content"><p class="kicker">Full Selection</p><h2>Our Cake Menu</h2><p>Choose your flavor, size, and custom design style.</p><a class="btn btn-primary" href="{% url 'bakery:order_now' %}">Explore</a></div></section>
+  <section class="light-wrap">
+    <div class="menu-tools">
+      <input id="menu-search" type="search" placeholder="Search cake by name...">
+      <select id="menu-sort">
+        <option value="default">Sort: Default</option>
+        <option value="price_asc">Price: Low to High</option>
+        <option value="price_desc">Price: High to Low</option>
+      </select>
+    </div>
+    <p id="menu-empty" class="menu-empty" hidden>No cakes match your search.</p>
+    <div class="grid grid-4" id="menu-grid">
+      {% for cake in cakes %}
+      <article class="tile js-menu-card" data-name="{{ cake.name|lower }}" data-price="{{ cake.unit_price }}">
+        <img src="{{ cake.image_url|default:'https://images.pexels.com/photos/1055272/pexels-photo-1055272.jpeg?auto=compress&cs=tinysrgb&w=1200' }}" alt="{{ cake.name }}">
+        <div class="tile-body"><h3>{{ cake.name }}</h3><p>Rs. {{ cake.unit_price }}</p><a class="btn btn-primary" href="{% url 'bakery:order_now' %}">Order Now</a></div>
+      </article>
+      {% empty %}
+      <p>No cakes available.</p>
+      {% endfor %}
+    </div>
+  </section>
+</main>
+{% endblock %}

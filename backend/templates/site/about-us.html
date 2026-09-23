@@ -1,0 +1,24 @@
+{% extends "site/base.html" %}
+{% block title %}About | MAK CAKES{% endblock %}
+{% block content %}
+<main class="page">
+  <section class="inner-hero" style="background-image:url('https://images.pexels.com/photos/30158835/pexels-photo-30158835.jpeg?cs=srgb&dl=pexels-burak-akin-685222187-30158835.jpg&fm=jpg');">
+    <div class="inner-hero-content">
+      <p class="kicker">Who We Are</p>
+      <h2>About Us</h2>
+      <p>MAK CAKES creates custom cakes that look beautiful and taste unforgettable.</p>
+      <a class="btn btn-primary" href="{% url 'bakery:order_now' %}">Order Now</a>
+    </div>
+  </section>
+
+  <section class="light-wrap">
+    <div class="grid grid-2 align-center">
+      <div><img class="media-rounded" src="https://images.pexels.com/photos/17578547/pexels-photo-17578547.jpeg?cs=srgb&dl=pexels-anna-shakhrai-129681881-17578547.jpg&fm=jpg" alt="Bakery interior"></div>
+      <div>
+        <h2>Made Fresh Every Day</h2>
+        <p class="lead">From birthdays to weddings, our team bakes with precision and creative design to match your event theme.</p>
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock %}

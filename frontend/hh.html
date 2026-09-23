@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Sweet Delights</title>
+    <style>
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #f5f0e1, #d3a588);
+            color: #4b3832;
+            text-align: center;
+        }
+        .header {
+            background: linear-gradient(to right, #8b5e3b, #a67c52);
+            color: white;
+            padding: 25px 0;
+            font-size: 28px;
+            font-weight: bold;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .gallery-container {
+            max-width: 1100px;
+            margin: 40px auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        .gallery-item {
+            background: #e0c097;
+            width: 300px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+        }
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px 12px 0 0;
+        }
+        .gallery-item h3 {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #6b4226;
+        }
+        .back-home {
+            text-align: center;
+            margin-top: 25px;
+        }
+        .back-home a {
+            color: #6b4226;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+        .back-home a:hover {
+            color: #4b2d1f;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">Our Cake Gallery</div>
+    <div class="gallery-container">
+        <div class="gallery-item"><img src="CHOCOLATE.JPEG" alt="Chocolate Cake"><h3>Chocolate Delight</h3></div>
+        <div class="gallery-item"><img src="VANILLA.JPEG" alt="Vanilla Cake"><h3>Vanilla Dream</h3></div>
+        <div class="gallery-item"><img src="STRAWBERRY.JPEG" alt="Strawberry Cake"><h3>Strawberry Bliss</h3></div>
+        <div class="gallery-item"><img src="RED.JPEG" alt="Red Velvet Cake"><h3>Red Velvet Magic</h3></div>
+        <div class="gallery-item"><img src="BLUEBERRY.WEBP" alt="Blueberry Cake"><h3>Blueberry Heaven</h3></div>
+        <div class="gallery-item"><img src="BLACK.WEBP" alt="Black Forest Cake"><h3>Black Forest Classic</h3></div>
+        <div class="gallery-item"><img src="BUTTERSCOTCH.JPEG" alt="BUTTERSCOTCH Cake"><h3>Caramel Indulgence</h3></div>
+        <div class="gallery-item"><img src="MIXED.JPEG" alt="Fruit Cake"><h3>Fruit Fantasy</h3></div>
+        <div class="gallery-item"><img src="MANGO.JPEG" alt="Mango Cake"><h3>Mango Temptation</h3></div>
+        <div class="gallery-item"><img src="BENTO.JPEG" alt="BENTO CAKE"><h3>BENTO CAKE</h3></div>
+        <div class="gallery-item"><img src="PINATA.JPEG" alt="Coffee Cake"><h3>Mocha Bliss</h3></div>
+        <div class="gallery-item"><img src="RASMALAI.JPEG" alt="RASMALAI Cake"><h3>RASMALI </h3></div>
+        <div class="gallery-item"><img src="FONDANT.JPEG" alt="FONDANT CAKE"><h3>FONDANT CAKE</h3></div>
+        <div class="gallery-item"><img src="COFFEE.JPEG" alt="Oreo Cake"><h3>COFFEE CAKE</h3></div>
+        <div class="gallery-item"><img src="GREEN.WEBP" alt="Matcha Cake"><h3>Matcha Green Tea</h3></div>
+        <div class="gallery-item"><img src="RASMALAI.JPEG" alt="RASMALAI Cake"><h3>RASMALAI CAKE</h3></div>
+        <div class="gallery-item"><img src="PEANUT.JPEG" alt="Peanut Butter Cake"><h3>Peanut Butter Bliss</h3></div>
+        <div class="gallery-item"><img src="PHOTO.WEBP" alt="PHOTO Cake"><h3>PHOTO CAKE</h3></div>
+        
+    </div>
+    <div class="back-home">
+        <a href="index.html">← Back to Home Page</a>
+    </div>
+</body>
+</html>

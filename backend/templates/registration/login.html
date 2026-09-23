@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | MAK Cakes</title>
+  <link rel="stylesheet" href="{% static 'styles.css' %}">
+  <style>
+    .auth-wrap { max-width: 460px; margin: 70px auto; background: #fffaf4; color: #2f221b; border: 1px solid rgba(96,67,52,.18); border-radius: 16px; padding: 24px; box-shadow: 0 14px 30px rgba(20,10,5,.12); }
+    .auth-wrap h1 { margin-top: 0; margin-bottom: 8px; font-family: Georgia, "Times New Roman", serif; }
+    .auth-wrap p { color: #6d5a4f; margin-top: 0; }
+    .auth-wrap form { display: grid; gap: 12px; }
+    .errorlist { margin: 0; padding-left: 18px; color: #9f1239; font-size: .9rem; }
+  </style>
+</head>
+<body>
+  <main class="auth-wrap">
+    <h1>Management Login</h1>
+    <p>Sign in with a staff account to access dashboard and operations.</p>
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button class="btn btn-primary" type="submit">Login</button>
+    </form>
+  </main>
+</body>
+</html>

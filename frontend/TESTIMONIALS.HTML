@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Testimonials</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease-in-out;
+        }
+        .container:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        h2 {
+            color: #d35400;
+            font-size: 32px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+        .testimonial {
+            border-bottom: 1px solid #ddd;
+            padding: 20px;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            transition: transform 0.3s ease, background 0.3s ease;
+            border-radius: 10px;
+        }
+        .testimonial:hover {
+            transform: scale(1.03);
+            background: #ffedd5;
+        }
+        .testimonial:last-child {
+            border-bottom: none;
+        }
+        .testimonial img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border: 4px solid #d35400;
+            transition: transform 0.3s ease;
+        }
+        .testimonial img:hover {
+            transform: rotate(10deg) scale(1.1);
+        }
+        .testimonial p {
+            margin: 5px 0;
+            font-size: 17px;
+        }
+        .name {
+            font-weight: bold;
+            font-size: 20px;
+            color: #333;
+        }
+        .rating {
+            color: gold;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Customer Testimonials</h2>
+        <div id="testimonials">
+            <div class="testimonial">
+                <img src="https://randomuser.me/api/portraits/men/11.jpg" alt="Liam Harris">
+                <div>
+                    <p class="name">Liam Harris</p>
+                    <p class="rating">★★★★★</p>
+                    <p>"Delicious cake, great presentation!"</p>
+                </div>
+            </div>
+            <div class="testimonial">
+                <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="Mia Thompson">
+                <div>
+                    <p class="name">Mia Thompson</p>
+                    <p class="rating">★★★★☆</p>
+                    <p>"Great taste, could improve delivery speed."</p>
+                </div>
+            </div>
+            <div class="testimonial">
+                <img src="https://randomuser.me/api/portraits/men/13.jpg" alt="Noah White">
+                <div>
+                    <p class="name">Noah White</p>
+                    <p class="rating">★★★★★</p>
+                    <p>"Outstanding quality, will order again!"</p>
+                </div>
+            </div>
+            <div class="testimonial">
+                <img src="https://randomuser.me/api/portraits/women/14.jpg" alt="Emma Roberts">
+                <div>
+                    <p class="name">Emma Roberts</p>
+                    <p class="rating">★★★★★</p>
+                    <p>"Perfect for celebrations! Loved every bite."</p>
+                </div>
+            </div>
+            <div class="testimonial">
+                <img src="https://randomuser.me/api/portraits/men/15.jpg" alt="James Carter">
+                <div>
+                    <p class="name">James Carter</p>
+                    <p class="rating">★★★★★</p>
+                    <p>"Best cake I've ever had! Highly recommend."</p>
+                </div>
+            </div>
+            <div class="testimonial">
+                <img src="https://randomuser.me/api/portraits/women/16.jpg" alt="Sophia Lewis">
+                <div>
+                    <p class="name">Sophia Lewis</p>
+                    <p class="rating">★★★★☆</p>
+                    <p>"Tasty and beautifully decorated cakes!"</p>
+                </div>
+            </div>
+            <div class="testimonial">
+                <img src="https://randomuser.me/api/portraits/men/17.jpg" alt="Ethan Walker">
+                <div>
+                    <p class="name">Ethan Walker</p>
+                    <p class="rating">★★★★★</p>
+                    <p>"A wonderful treat! Worth every penny!"</p>
+                </div>
+            </div>
+            <div class="testimonial">
+                <img src="https://randomuser.me/api/portraits/women/18.jpg" alt="Olivia Anderson">
+                <div>
+                    <p class="name">Olivia Anderson</p>
+                    <p class="rating">★★★★★</p>
+                    <p>"Loved the cake! Perfectly moist and flavorful."</p>
+                </div>
+            </div>
+            <div class="testimonial">
+                <img src="https://randomuser.me/api/portraits/men/19.jpg" alt="William Brown">
+                <div>
+                    <p class="name">William Brown</p>
+                    <p class="rating">★★★★★</p>
+                    <p>"Absolutely delicious! Will order again soon."</p>
+                </div>
+            </div>
+            <div class="testimonial">
+                <img src="https://randomuser.me/api/portraits/women/20.jpg" alt="Charlotte Green">
+                <div>
+                    <p class="name">Charlotte Green</p>
+                    <p class="rating">★★★★☆</p>
+                    <p>"Beautiful design, tasted amazing!"</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

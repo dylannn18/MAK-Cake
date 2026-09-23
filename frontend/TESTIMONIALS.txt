@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Testimonials</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #d35400;
+        }
+        .testimonial {
+            border-bottom: 1px solid #ddd;
+            padding: 15px;
+            text-align: left;
+        }
+        .testimonial:last-child {
+            border-bottom: none;
+        }
+        .testimonial p {
+            margin: 5px 0;
+        }
+        .name {
+            font-weight: bold;
+        }
+        .rating {
+            color: gold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Customer Testimonials</h2>
+        <div id="testimonials">
+            <div class="testimonial">
+                <p class="name">John Doe</p>
+                <p class="rating">★★★★★</p>
+                <p>"Amazing cake! It was delicious and beautifully decorated."</p>
+            </div>
+            <div class="testimonial">
+                <p class="name">Sarah Smith</p>
+                <p class="rating">★★★★☆</p>
+                <p>"Great taste and fast delivery. Will order again!"</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

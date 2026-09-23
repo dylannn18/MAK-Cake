@@ -1,0 +1,54 @@
+{% extends "bakery/base.html" %}
+{% block title %}Bill #{{ bill.bill_number }} | MAK Cakes{% endblock %}
+{% block content %}
+<div class="toolbar">
+  <h1>Bill {{ bill.bill_number }}</h1>
+  <div>
+    <a class="btn btn-ghost" href="{% url 'bakery:order_list' %}">Back to Orders</a>
+    <a class="btn btn-gold" href="{% url 'bakery:bill_pdf' order.id %}">Download PDF</a>
+    <button class="btn btn-dark" onclick="window.print()">Print</button>
+  </div>
+</div>
+
+<div class="card">
+  <p><strong>Order:</strong> #{{ order.id }}</p>
+  <p><strong>Customer:</strong> {{ order.customer.full_name }} ({{ order.customer.phone }})</p>
+  <p><strong>Issued At:</strong> {{ bill.issued_at }}</p>
+  <p><strong>Due Date:</strong> {{ bill.due_date|default:"-" }}</p>
+  <p><strong>Order Status:</strong> {{ order.get_status_display }}</p>
+  <p><strong>Payment Status:</strong> {{ bill.get_payment_status_display }}</p>
+  {% if bill.paid_at %}
+  <p><strong>Paid At:</strong> {{ bill.paid_at }}</p>
+  {% endif %}
+</div>
+
+<h2>Items</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Cake</th>
+      <th>Qty</th>
+      <th>Rate</th>
+      <th>Line Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for item in order.items.all %}
+    <tr>
+      <td>{{ item.cake.name }}</td>
+      <td>{{ item.quantity }}</td>
+      <td>Rs. {{ item.unit_price }}</td>
+      <td>Rs. {{ item.line_total }}</td>
+    </tr>
+    {% empty %}
+    <tr><td colspan="4">No items added.</td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<div class="card text-right" style="margin-top:12px;">
+  <p><strong>Subtotal:</strong> Rs. {{ order.subtotal }}</p>
+  <p><strong>Tax (5%):</strong> Rs. {{ order.tax_amount }}</p>
+  <p><strong>Total:</strong> Rs. {{ order.total_amount }}</p>
+</div>
+{% endblock %}
